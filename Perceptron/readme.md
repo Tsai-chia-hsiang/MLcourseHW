@@ -22,11 +22,11 @@ w_1 \\
 w_2
 \end{bmatrix} = 0 $$
 
-後，將 $(0, 1)$ 分成所要資料個數的N個分點 ( ```使用np.linespace()``` )，視為   $\bold{x_1}$ ，並將 $\bold{x_2}$ 用上述方程式算出來，成為 unbiased 的資料集。
+後，將 $(0, 1)$ 分成所要資料個數的N個分點 ( ```使用np.linespace()``` )，視為   $X_1$ ，並將 $X_2$ 用上述方程式算出來，成為 unbiased 的資料集。
 
 之後，在使用 ```np.random.uniform(low = 0.1, high = 1.1, (N,1))``` 生成一系列偽隨機數當作 bias。其中，```low``` 設為0.1是為了防止產生 0 。
 
-把 $\bold{x_1}$ 一半的部分減去一半的bias，那些 $(x_i-\text{bias}_i, y_i)$ 在直線左邊，可以用來當作 negative samples ；剩下的一半加到另一半的 $\bold{x_1}$，$(x_j+\text{bias}_j, y_j)$ 在直線的右半邊，可以用來當作 positive samples
+把 $X_1$ 一半的部分減去一半的bias，那些 $(x_i-\text{bias}_i, y_i)$ 在直線左邊，可以用來當作 negative samples ；剩下的一半加到另一半的 $X_1$，$(x_j+\text{bias}_j, y_j)$ 在直線的右半邊，可以用來當作 positive samples
 
 ## Q2:
 ### 實驗結果
@@ -44,7 +44,8 @@ weight 的數據四捨五入到小數點第3位；
 #### 第一次: 
   - 使用直線: 
   
-    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}
+    $$\begin{bmatrix} 1 &x_1 & x_2\end{bmatrix}\times
+    \begin{bmatrix}
       1.5\\
       -0.3\\
       -1
@@ -134,7 +135,7 @@ weight 的數據四捨五入到小數點第3位；
 ## Q3
 資料集的生成大致上和前面相同，只是由於各有1000個點(共2000個sample)，所以 $x_1$ 的範圍調整為 $(-20.0, 20.0)$；而在加/減 bias 之前，會先把從 unifrom 得到的數值都 $\times 5$ 在加/減到 $x_1$，讓樣本間隔較寬。
 
-另外，在使用pocket algorithm更新權重的時候，我將每次都隨機選改成從此次錯誤第一個的 $x_{\text{wrong}_0}$ 開始，如果選到的前一個不能改進，就試試它的下一個 $x_{\text{wrong}_1}$，直到這個 weight 都不能被此次犯錯的$\bold{x}$ 改進為止就結束，所以理論上執行速度會比原本的版本快一點。
+另外，在使用pocket algorithm更新權重的時候，我將每次都隨機選改成從此次錯誤第一個的 $x_{\text{wrong}_0}$ 開始，如果選到的前一個不能改進，就試試它的下一個 $x_{\text{wrong}_1}$，直到這個 weight 都不能被此次犯錯的$X}$ 改進為止就結束，所以理論上執行速度會比原本的版本快一點。
 
 ### 實驗結果
 - 使用直線: 
