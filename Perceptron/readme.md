@@ -163,25 +163,25 @@ $$x_2 = 4.429x_1 + (-3.571)$$
 - 程式執行結果:
     - navie PLA:
   
-  $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+$$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
         -333.685\\
         1078.664\\
         -243.472
       \end{bmatrix} = 0$$
 
-  $$x_2 = 4.430x_1 + (-1.371)$$
+$$x_2 = 4.430x_1 + (-1.371)$$
 
     - pocket :
   
-    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+$$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
         -1.685\\
         4.812\\
         -0.877
       \end{bmatrix} = 0$$
 
-    $$x_2 = 5.484x_1 + (-1.921)$$
+$$x_2 = 5.484x_1 + (-1.921)$$
 
 
 視覺化:<img src="Pocket1000\model\optimal_status.jpg">
@@ -193,14 +193,14 @@ $$x_2 = 4.429x_1 + (-3.571)$$
 ### 實驗結果:
 - 程式執行結果
   
-  $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+$$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
   \begin{bmatrix} 
     0.315\\
     2.442\\
     -0.488
   \end{bmatrix} = 0$$
 
-  $$x_2 = 5.004x_1 + 0.645$$
+$$x_2 = 5.004x_1 + 0.645$$
 
 - Accuracy
   |training with mislabel dataset|Actual|
