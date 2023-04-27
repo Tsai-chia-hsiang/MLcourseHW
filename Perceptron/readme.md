@@ -164,7 +164,7 @@ $$x_2 = 4.429x_1 + (-3.571)$$
 
   - __navie PLA__ :
   
-  $$
+$$
   \begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
         -333.685 \\
