@@ -22,7 +22,7 @@ w_1 \\
 w_2
 \end{bmatrix} = 0 $$
 
-後，將 $(0, 1)$ 分成所要資料個數的N個分點 ( ```使用np.linespace()``` )，視為 $\bold{x_1}$ ，並將 $\bold{x_2}$ 用上述方程式算出來，成為 unbiased 的資料集。
+後，將 $(0, 1)$ 分成所要資料個數的N個分點 ( ```使用np.linespace()``` )，視為   $\bold{x_1}$ ，並將 $\bold{x_2}$ 用上述方程式算出來，成為 unbiased 的資料集。
 
 之後，在使用 ```np.random.uniform(low = 0.1, high = 1.1, (N,1))``` 生成一系列偽隨機數當作 bias。其中，```low``` 設為0.1是為了防止產生 0 。
 
@@ -44,7 +44,11 @@ weight 的數據四捨五入到小數點第3位；
 #### 第一次: 
   - 使用直線: 
   
-    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}1.5\\-0.3\\-1\end{bmatrix} = 0$$
+    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}
+      1.5\\
+      -0.3\\
+      -1
+    \end{bmatrix} = 0$$
 
     $$x_2 = 0.3x_1 + 1.5$$
 
@@ -60,7 +64,11 @@ weight 的數據四捨五入到小數點第3位；
 #### 第二次: 
   - 使用直線: 
   
-    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}0.5\\-6.2\\0.14\end{bmatrix} = 0$$
+    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+    \begin{bmatrix}
+      0.5 \\
+      -6.2 \\
+      0.14\end{bmatrix} = 0$$
 
     $$x_2 = 4.429x_1 + (-3.571)$$
 
@@ -68,7 +76,12 @@ weight 的數據四捨五入到小數點第3位；
   
   - 程式執行結果:
   
-     $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}-6.579\\8.522\\-1.083\end{bmatrix} = 0$$
+     $$ \begin{bmatrix}1 &x_1 & x_2\end{bmatrix}\times
+     \begin{bmatrix}
+      -6.579 \\
+      8.522 \\
+      -1.083
+      \end{bmatrix} = 0 $$
 
      $$x_2 = 7.872x_1 + (-6.077)$$
 
@@ -78,7 +91,12 @@ weight 的數據四捨五入到小數點第3位；
 #### 第三次: 
   - 使用直線: 
   
-    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}-0.8\\0.52\\-0.04\end{bmatrix} = 0$$
+    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+    \begin{bmatrix}
+      -0.8\\
+      0.52\\
+      -0.04
+    \end{bmatrix} = 0$$
 
     $$x_2 = 13x_1 + (-20)$$
 
@@ -86,7 +104,12 @@ weight 的數據四捨五入到小數點第3位；
   
   - 程式執行結果:
   
-     $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}-63.892\\ 44.052\\-3.161\end{bmatrix} = 0$$
+     $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+     \begin{bmatrix}
+      -63.892\\
+      44.052\\
+      -3.161
+      \end{bmatrix} = 0$$
 
      $$x_2 = 13.935x_1 + (-20.211)$$
 
@@ -116,7 +139,12 @@ weight 的數據四捨五入到小數點第3位；
 ### 實驗結果
 - 使用直線: 
 
-    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}-0.5\\0.62\\-0.14\end{bmatrix} = 0$$
+    $$ \begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+    \begin{bmatrix}
+      -0.5\\
+      0.62\\
+      -0.14
+      \end{bmatrix} = 0 $$
 
     $$x_2 = 4.429x_1 + (-3.571)$$
 
@@ -130,13 +158,23 @@ weight 的數據四捨五入到小數點第3位；
 - 程式執行結果:
     - navie PLA:
   
-      $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}-333.685\\1078.664\\-243.472\end{bmatrix} = 0$$
+      $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+      \begin{bmatrix}
+        -333.685\\
+        1078.664\\
+        -243.472
+      \end{bmatrix} = 0$$
 
       $$x_2 = 4.430x_1 + (-1.371)$$
 
     - pocket :
   
-      $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}-1.685\\4.812\\-0.877\end{bmatrix} = 0$$
+      $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+      \begin{bmatrix}
+        -1.685\\
+        4.812\\
+        -0.877
+      \end{bmatrix} = 0$$
 
       $$x_2 = 5.484x_1 + (-1.921)$$
 
@@ -150,7 +188,12 @@ weight 的數據四捨五入到小數點第3位；
 ### 實驗結果:
 - 程式執行結果
   
-  $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix} 0.315\\2.442\\-0.488\end{bmatrix} = 0$$
+  $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+  \begin{bmatrix} 
+    0.315\\
+    2.442\\
+    -0.488
+  \end{bmatrix} = 0$$
 
   $$x_2 = 5.004x_1 + 0.645$$
 
