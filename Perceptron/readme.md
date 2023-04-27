@@ -44,7 +44,7 @@ weight 的數據四捨五入到小數點第3位；
 #### 第一次: 
   - 使用直線: 
   
-    $$ \begin{bmatrix} 1 & x_1 & x_2\end{bmatrix}\times
+    $$ \begin{bmatrix} 1 & x_1 & x_2 \end{bmatrix} \times
     \begin{bmatrix}
       1.5\\
       -0.3\\
