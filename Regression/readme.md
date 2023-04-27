@@ -32,11 +32,15 @@
 |whole data|__0.649__|x|
 
 fit line:
+
 $$W=\begin{bmatrix}
-w_0 \\ w_1
+w_0 \\ 
+w_1
 \end{bmatrix}=\begin{bmatrix}
-0.637 \\ 2.136
+0.637 \\ 
+2.136
 \end{bmatrix}$$
+
 <img src="result\linreg\whole\fitline.jpg">
 
 ### Q3 
