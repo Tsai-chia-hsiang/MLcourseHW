@@ -230,7 +230,7 @@ fitline : <img src = "result\sin_m320\p14\whole\fitline.jpg">
 還有一點很奇怪 whole data training error 在 m= 10 時候反而最小。
 上述討論 (Q3) 時，我的猜測是點不夠，但此情況是 m = 10，比 15 個點還要少，如果 Q3 我的假設是對的，那應該 fit 不起來， m=10 training error 要最大。
 
-我想可能是由於他的資料生成跟 groundtruth ($\text{sin}(2\pi x)$) 很像 ($\epsilon \sim N(0,0.04)$ variance 很小)，degree = 14 的多項式可能剛好有能力精準 fit 到 1 cycle sin wave 的 10 個點，才會突然能 fit 起來。
+我想可能是由於他的資料生成跟 groundtruth ( $\text{sin}(2\pi x)$ ) 很像 ( $\epsilon \sim N(0,0.04)$ variance 很小 )，degree = 14 的多項式可能剛好有能力精準 fit 到 1 cycle sin wave 的 10 個點，才會突然能 fit 起來。
 
 而像是 m=80, 320這兩個資料集，視覺上幾乎就是 sin wave了，所以反而體現出 polynomial 逼近 1 cycle sin wave 的真正狀態。
 
