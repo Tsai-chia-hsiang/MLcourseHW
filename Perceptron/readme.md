@@ -160,11 +160,11 @@ $$x_2 = 4.429x_1 + (-3.571)$$
     |navie PLA|747|0.633 s|100 %|
     |pocket|854|0.274 s|86 %|
 
-- 程式執行結果:
-$$a$$
-  - __navie PLA__ :
+程式執行結果:
 
-  $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+__navie PLA__ :
+
+$$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
         -333.685 \\
         1078.664 \\
@@ -173,7 +173,7 @@ $$a$$
     
   $$x_2 = 4.430x_1 + (-1.371)$$
 
-  - __pocket__ :
+__pocket__ :
   
   $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
