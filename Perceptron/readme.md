@@ -55,35 +55,40 @@ $$x_2 = 0.3x_1 + 1.5$$
   - iterations: 5
   - 程式執行結果:
   
-     $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix}-1.190\\3.330\\-0.565\end{bmatrix} = 0$$
+$$\begin{bmatrix} 1 & x_1 &x_2\end{bmatrix}\times
+\begin{bmatrix}
+  -1.190 \\
+  3.330 \\
+  -0.565
+\end{bmatrix} = 0$$
 
-     $$x_2 = -2.106x_1 + 5.894$$
+$$x_2 = -2.106x_1 + 5.894$$
 
 視覺化:<img src="PLA30\v1\model\optimal_status.jpg">
 
 #### 第二次: 
   - 使用直線: 
   
-    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+$$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
     \begin{bmatrix}
       0.5 \\
       -6.2 \\
       0.14\end{bmatrix} = 0$$
 
-    $$x_2 = 4.429x_1 + (-3.571)$$
+$$x_2 = 4.429x_1 + (-3.571)$$
 
   - iterations: 30
   
   - 程式執行結果:
   
-     $$ \begin{bmatrix}1 &x_1 & x_2\end{bmatrix}\times
+  $$ \begin{bmatrix}1 &x_1 & x_2\end{bmatrix}\times
      \begin{bmatrix}
       -6.579 \\
       8.522 \\
       -1.083
       \end{bmatrix} = 0 $$
 
-     $$x_2 = 7.872x_1 + (-6.077)$$
+$$x_2 = 7.872x_1 + (-6.077)$$
 
 
 視覺化:<img src="PLA30\v2\model\optimal_status.jpg">
@@ -91,27 +96,27 @@ $$x_2 = 0.3x_1 + 1.5$$
 #### 第三次: 
   - 使用直線: 
   
-    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+$$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
     \begin{bmatrix}
       -0.8\\
       0.52\\
       -0.04
     \end{bmatrix} = 0$$
 
-    $$x_2 = 13x_1 + (-20)$$
+$$x_2 = 13x_1 + (-20)$$
 
   - iterations: 276
   
   - 程式執行結果:
   
-     $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+$$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
      \begin{bmatrix}
       -63.892\\
       44.052\\
       -3.161
       \end{bmatrix} = 0$$
 
-     $$x_2 = 13.935x_1 + (-20.211)$$
+$$x_2 = 13.935x_1 + (-20.211)$$
 
 
 視覺化:<img src="PLA30\v3\model\optimal_status.jpg">
@@ -134,19 +139,19 @@ $$x_2 = 0.3x_1 + 1.5$$
 ## Q3
 資料集的生成大致上和前面相同，只是由於各有1000個點(共2000個sample)，所以 $x_1$ 的範圍調整為 $(-20.0, 20.0)$；而在加/減 bias 之前，會先把從 unifrom 得到的數值都 $\times 5$ 在加/減到 $x_1$，讓樣本間隔較寬。
 
-另外，在使用pocket algorithm更新權重的時候，我將每次都隨機選改成從此次錯誤第一個的 $x_{\text{wrong}_0}$ 開始，如果選到的前一個不能改進，就試試它的下一個 $x_{\text{wrong}_1}$，直到這個 weight 都不能被此次犯錯的$X}$ 改進為止就結束，所以理論上執行速度會比原本的版本快一點。
+另外，在使用pocket algorithm更新權重的時候，我將每次都隨機選改成從此次錯誤第一個的 $x_{\text{wrong}_0}$ 開始，如果選到的前一個不能改進，就試試它的下一個 $x_{\text{wrong}_1}$，直到這個 weight 都不能被此次犯錯的$x_i$ 改進為止就結束，所以理論上執行速度會比原本的版本快一點。
 
 ### 實驗結果
 - 使用直線: 
 
-    $$ \begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+$$ \begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
     \begin{bmatrix}
       -0.5\\
       0.62\\
       -0.14
       \end{bmatrix} = 0 $$
 
-    $$x_2 = 4.429x_1 + (-3.571)$$
+$$x_2 = 4.429x_1 + (-3.571)$$
 
 - 訓練相關數據:
     
@@ -158,25 +163,25 @@ $$x_2 = 0.3x_1 + 1.5$$
 - 程式執行結果:
     - navie PLA:
   
-      $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+  $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
         -333.685\\
         1078.664\\
         -243.472
       \end{bmatrix} = 0$$
 
-      $$x_2 = 4.430x_1 + (-1.371)$$
+  $$x_2 = 4.430x_1 + (-1.371)$$
 
     - pocket :
   
-      $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
+    $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
         -1.685\\
         4.812\\
         -0.877
       \end{bmatrix} = 0$$
 
-      $$x_2 = 5.484x_1 + (-1.921)$$
+    $$x_2 = 5.484x_1 + (-1.921)$$
 
 
 視覺化:<img src="Pocket1000\model\optimal_status.jpg">
