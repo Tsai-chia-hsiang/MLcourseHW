@@ -16,7 +16,7 @@
 ## Q1 生成資料集的方法:
 給定直線 
 
-$$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times \begin{bmatrix}w_0 \\ w_1 \\ w_2\end{bmatrix}=0$$ 
+$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times \begin{bmatrix}w_0 \\ w_1 \\ w_2\end{bmatrix}=0$
 
 後，將 $(0, 1)$ 分成所要資料個數的N個分點 ( ```使用np.linespace()``` )，視為 $\bold{x_1}$ ，並將 $\bold{x_2}$ 用上述方程式算出來，成為 unbiased 的資料集。
 
@@ -149,7 +149,7 @@ weight 的數據四捨五入到小數點第3位；
   $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times\begin{bmatrix} 0.315\\2.442\\-0.488\end{bmatrix} = 0$$
 
   $$x_2 = 5.004x_1 + 0.645$$
-  
+
 - Accuracy
   |training with mislabel dataset|Actual|
   |-|-|
