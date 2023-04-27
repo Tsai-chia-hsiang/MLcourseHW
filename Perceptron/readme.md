@@ -161,7 +161,7 @@ $$x_2 = 4.429x_1 + (-3.571)$$
     |pocket|854|0.274 s|86 %|
 
 - 程式執行結果:
-$$$$
+$$a$$
   - __navie PLA__ :
 
   $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
