@@ -290,9 +290,9 @@ fitting line:<img src="result\regu_sin_15\l3\p14\whole\fitline.jpg">
 
 #### 討論
 
-根據我的實驗，$\lambda=0.00067$ 具有最小的 validation mse ，故為最適合的model。
+根據我的實驗， $\lambda=0.00067$ 具有最小的 validation mse ，故為最適合的model。
 
-另外，依據fitting line，$\lambda$ 越大，越接近水平線，也就是越傾向於把各 p>0 的項次的 weights 訓練成 0 。
+另外，依據fitting line， $\lambda$ 越大，越接近水平線，也就是越傾向於把各 p>0 的項次的 weights 訓練成 0 。
 
 ## 結論
 
