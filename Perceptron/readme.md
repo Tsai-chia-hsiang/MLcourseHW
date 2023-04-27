@@ -166,8 +166,8 @@ $$x_2 = 4.429x_1 + (-3.571)$$
   
   $$\begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
-        -333.685\\
-        1078.664\\
+        -333.685 \\
+        1078.664 \\
         -243.472
       \end{bmatrix} = 0$$
 
@@ -178,8 +178,8 @@ $$x_2 = 4.429x_1 + (-3.571)$$
   $$
   \begin{bmatrix}1 &x_1 &x_2\end{bmatrix}\times
       \begin{bmatrix}
-        -1.685\\
-        4.812\\
+        -1.685 \\
+        4.812 \\
         -0.877
       \end{bmatrix} = 0
   $$
