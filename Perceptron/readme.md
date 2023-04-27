@@ -26,7 +26,7 @@ w_2
 
 之後，在使用 ```np.random.uniform(low = 0.1, high = 1.1, (N,1))``` 生成一系列偽隨機數當作 bias。其中，```low``` 設為0.1是為了防止產生 0 。
 
-把 $X_1$ 一半的部分減去一半的bias，那些 $(x_i-\text{bias}_i, y_i)$ 在直線左邊，可以用來當作 negative samples ；剩下的一半加到另一半的 $X_1$，$(x_j+\text{bias}_j, y_j)$ 在直線的右半邊，可以用來當作 positive samples
+把 $X_1$ 一半的部分減去一半的bias，那些 $(x_i-\text{bias}_i, y_i)$ 在直線左邊，可以用來當作 negative samples ；剩下的一半加到另一半的 $X_1$， $(x_j+\text{bias}_j, y_j)$  在直線的右半邊，可以用來當作 positive samples
 
 ## Q2:
 ### 實驗結果
