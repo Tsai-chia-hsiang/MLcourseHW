@@ -20,6 +20,6 @@ contact me:
 
 Each folder contains a topic and can tell by its name.
 
-The way to execution is in the file ```report.md``` at each folder, please go check. 
+The way to execution is in the file ```readme.md``` at each folder, please go check. 
 
 ** Due to the course requirement, all my reports are written in Tradition Chinese. 
