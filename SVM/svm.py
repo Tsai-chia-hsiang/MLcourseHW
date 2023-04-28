@@ -29,16 +29,23 @@ def generate_data(region=(-100, 100), N=500, gaussian_noise_para=(0.0,1.0)):
     biased = 2*x+ eps
     return {'data':np.hstack((x,biased)),'label':label}
 
-def main(saveroot):
+def main(saveroot, datafile=None):
+    dataset = None
+    if datafile is None:
+        print("Generate new data to train")
+        dataset = LIBSVM_Dataset(generator=generate_data)
+        dataset.gen(needreturn=False)
     
-
-    dataset = LIBSVM_Dataset(generator=generate_data)
-    dataset.gen(needreturn=False)
+        _ = LIBSVM_Dataset.savedata(
+            data=dataset.get_data(),
+            savepath=makedir(os.path.join(saveroot,"data"))
+        )
+    else:
+        print(f"Use the pre-generated data from : {datafile}")
+        dataset = LIBSVM_Dataset()
+        dataset.get_data(fromfile=datafile)
     
-    _ = LIBSVM_Dataset.savedata(
-        data=dataset.get_data(),
-        savepath=makedir(os.path.join("result","data"))
-    )
+    
 
     pc = np.arange(-5, 17, 2)
     pg = np.arange(-15, 5, 2)
@@ -65,10 +72,17 @@ def main(saveroot):
         saveroot=makedir(os.path.join(saveroot,"std"))
     )
     
-        
-if __name__ == "__main__":
-    
-    saveroot = os.path.join("result")
-    if not os.path.exists(saveroot):
-        os.mkdir(saveroot)
+def Do_The_Report_data():
+    saveroot = makedir(os.path.join("result"))
+    datafile=os.path.join(saveroot, "data","data.svm")
+    main(saveroot=saveroot, datafile=datafile)
+
+def Try_all_program():
+    saveroot = makedir(os.path.join("result1"))
     main(saveroot=saveroot)
+    
+if __name__ == "__main__":
+    #Do_The_Report_data()
+    
+    Try_all_program()
+    
