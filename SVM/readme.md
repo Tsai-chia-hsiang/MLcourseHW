@@ -8,7 +8,7 @@
 
 - sklearn
 - numpy 
+- pandas 
 - libsvm 
   - ```pip install -U libsvm-official```
       - from https://www.csie.ntu.edu.tw/~cjlin/libsvm/
-- matplotlib 
