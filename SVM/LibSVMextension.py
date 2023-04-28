@@ -71,8 +71,8 @@ class LIBSVM_Dataset():
                 print("will return None")
                 return None
         else:
-            y, x = svm_read_problem(data_file_name=fromfile)
-            self.__data = {'data':x,'label':y}
+            y, x = svm_read_problem(data_file_name=fromfile,return_scipy=True)
+            self.__data = {'data':x.toarray(),'label':y}
         
         return copy.deepcopy(self.__data)
     
@@ -83,6 +83,7 @@ class LIBSVM_Dataset():
             the sklearn scaler ```instance```.
         """
         scaling_d = self.get_data()
+        
         scaling_d['data'] =scaler.fit_transform(scaling_d['data'])
         if label:
             scaling_d['label'] = scaler.transform(
