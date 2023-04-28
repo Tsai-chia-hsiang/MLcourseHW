@@ -8,6 +8,7 @@
 
 - sklearn
 - numpy 
+- sicpy
 - pandas 
 - libsvm 
   - ```pip install -U libsvm-official```
