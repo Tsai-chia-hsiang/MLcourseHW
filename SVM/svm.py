@@ -83,7 +83,7 @@ def Try_all_program():
     main(saveroot=saveroot)
     
 if __name__ == "__main__":
-    Do_The_Report_data()
+    #Do_The_Report_data()
     
-    #Try_all_program()
+    Try_all_program()
     
