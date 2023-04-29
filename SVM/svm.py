@@ -53,7 +53,12 @@ def main(saveroot, datafile=None):
         'c':np.power(np.ones(pc.shape[0])*2 ,pc),
         'g':np.power(np.ones(pg.shape[0])*2 ,pg)
     }
-
+    cross_validation(
+        parameters=parameters,
+        data = dataset.scaling(scaler=StandardScaler(), label=False),
+        saveroot=makedir(os.path.join(saveroot,"std"))
+    )
+    
     cross_validation(
         parameters=parameters,
         data = dataset, 
@@ -66,11 +71,7 @@ def main(saveroot, datafile=None):
         saveroot=makedir(os.path.join(saveroot,"scaling_01"))
     )
     
-    cross_validation(
-        parameters=parameters,
-        data = dataset.scaling(scaler=StandardScaler(), label=False),
-        saveroot=makedir(os.path.join(saveroot,"std"))
-    )
+    
     
 def Do_The_Report_data():
     saveroot = makedir(os.path.join("result"))
@@ -82,7 +83,7 @@ def Try_all_program():
     main(saveroot=saveroot)
     
 if __name__ == "__main__":
-    #Do_The_Report_data()
+    Do_The_Report_data()
     
-    Try_all_program()
+    #Try_all_program()
     
