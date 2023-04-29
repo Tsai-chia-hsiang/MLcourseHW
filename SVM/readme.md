@@ -57,8 +57,8 @@ Grid search 的參數:
 
 
 ## 討論: 
-依據我的實驗結過，只要有適當的參數，好像其實以上兩種 scaling 方法跟原始資料所能達到的 accuracy 差不多。
+依據我的實驗結過，只要有適當的參數，好像其實以上兩種 scaling 方法跟原始資料所能達到的 accuracy 差不多。不過 Normalize 後的 accuracy 有稍微好一些。 
 
-不過，可以看到 $\gamma$ 再經過兩種 scaling 後，有出現比較有意義的值，不會像原始資料直接丟進去後跑出來幾乎為 0 。可能是因為 $\gamma$ 作用在 $exp$ 上，所以資料值太大的話會迫使 $\gamma$ 縮小來去 fit y。可以看出使用 normalize / standardize 後，數值在一個較為有限制的範圍，會 trian 出叫有意義的參數。
+可以看到 $\gamma$ 再經過兩種 scaling 後，有出現比較有意義的值，不會像原始資料直接丟進去後跑出來幾乎為 0。可能是因為 $\gamma$ 作用在 $exp$ 上，所以資料值太大的話會迫使 $\gamma$ 縮小來去 fit y。可以看出使用 normalize / standardize 後，數值在一個較為有限制的範圍，會 trian 出叫有意義的參數，我想這也可能是 Normalize 後的 accuracy 有稍微好一些的原因之一 。
 
 同時，從做 5-fold cross validation 的時間來看，沒有 scaling 的資料或許是因為數值較大，所以他算的比其他兩個慢 (27s)
