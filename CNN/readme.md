@@ -12,7 +12,7 @@
 
 - Create Argumented ImageFolder() :
 
-    <img src = "./codeblocks/arg.png" width="50%"> 
+    <img src = "./codeblocks/arg.png" width="70%"> 
 
 - 加入原始資料集 :
 
@@ -23,7 +23,8 @@
 
 #### Weak argumentation:
 - 程式片段:
-  <img src = "./codeblocks/weak.png" width="50%">
+  
+  <img src = "./codeblocks/weak.png" width="70%">
 
   使用 guassianblur()，將影像變模糊。
 
@@ -31,19 +32,19 @@
 
 我將 4 種 transform methods 合併來建立 1 個 strong argumentation (所以 training datasets 的數量還是一樣為原始的 2 倍)
 - 程式片段:
-    <img src="./codeblocks/strong.png" width="50%">
+    <img src="./codeblocks/strong.png" width="70%">
 
 ### 比較結果 
 
 #### training loss:
 
-<img src = "./cmp/cmp_train_loss.jpg" width="50%">
+<img src = "./cmp/cmp_train_loss.jpg" width="70%">
 
 可以看到使用 strong argumentation 後，training loss 明顯較大，是因為有很多被大量修改的圖片進入 trianing dataset 中，所以比較「多元」，更接近有許多不同 data 的情況；而 weak argumentation 則可能生成出與原始較相似 ( 相較於 strong ) 的資料，所以跟 default 情況差不多。
 
 #### validation loss :
 
-<img src="./cmp/cmp_eval_loss.jpg" width="50%">
+<img src="./cmp/cmp_eval_loss.jpg" width="70%">
 
 依據我的實驗結果，在 validation 上，使用 strong argumentation 的情況表現較好，應該是由於 dataset 相較多元，所以比較不會 overfitting 。
 
