@@ -15,7 +15,7 @@ https://www.kaggle.com/competitions/tlvmc-parkinsons-freezing-gait-prediction
 
 最終，我們參考 ```RestNet20``` 架構，把其中 2D convolution 改成 1D convolution
 
-<img src="./modelArch/block.svg" width = "65%">
+<img src="./modelArch/block.png" width = "65%">
 
 ** 原本的架構當 out channel 數量提升之時，旁邊的 shortcut kernel size 是 $1\times 1$；我們這邊不小心誤用成 $3\times 3$ 了
 
