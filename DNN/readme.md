@@ -30,3 +30,7 @@ Feature Extraction model
 
 <img src="./modelArch/classifier.png" width = "70%">
 
+### Whole model:
+
+<img src="./modelArch/whole.png" width = "70%">
+
