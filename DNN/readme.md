@@ -28,5 +28,5 @@ Feature Extraction model
 把使用 kernel 抓取特徵完的 features 送進 $k$ 層的 Linear Layers 來作為 classifier 。
 這邊我們選用了 2 層 Linear layers with activation function 在加最後 output layer 當作我們的分類器。
 
-<img src="./modelArch/classifier.png" width = "50%">
+<img src="./modelArch/classifier.png" width = "70%">
 
