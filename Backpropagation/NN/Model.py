@@ -1,5 +1,6 @@
 import numpy as np
 import os
+from Loss.loss import _loss
 
 class NNmodel():
     
@@ -44,3 +45,10 @@ class NNmodel():
             if hasattr(self.Sequence[li], 'load_pretrain'):
                 self.Sequence[li].load_pretrain(w=ws[f'arr_{i}'])
                 i += 1
+
+def test(xtest:np.ndarray, ytest:np.ndarray, model:NNmodel, loss:type[_loss])->float:
+    Loss = loss()
+    return Loss(
+        yhat=model.forward(xtest, req_g=False), y=ytest, 
+        req_g=False
+    )
