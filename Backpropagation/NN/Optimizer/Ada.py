@@ -21,20 +21,21 @@ class AdaGrad(_optimizer):
         for li in range(len(self._model.Sequence)):
             
             if self._model.Sequence[li]._type == "Linear":
-                
+                thisupdate = None
                 if self._history == 0:
                     self._approx_2nderiv.append(
                         (self._model.Sequence[li].gradiant)**2
                     )
                     thisupdate = self._lr*(self._model.Sequence[li].gradiant)
                 else:
-                    thisupdate = self._lr/(
-                        self._approx_2nderiv[linear_idx]**0.5 + 1e-8
-                    )*(self._model.Sequence[li].gradiant)
+                    thisupdate = self._lr*(self._model.Sequence[li].gradiant)/(
+                        (self._approx_2nderiv[linear_idx]+ 1e-8)**0.5
+                    ) 
                     self._approx_2nderiv[linear_idx] += (self._model.Sequence[li].gradiant)**2
-                    
+                    linear_idx += 1
+                
                 self._model.Sequence[li]._weight -= thisupdate
-                linear_idx += 1
+                
 
         if self._history == 0:
             self._history = 1
